@@ -3,7 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <meta name="theme-color" content="#020817">
+
+    <meta name="description"
+          content="Una pequeña sorpresa hecha con mucho cariño. ❤️">
 
     <title>CUMsito ⚓</title>
 
@@ -12,64 +19,196 @@
 
 <body>
 
-    <div class="estrellas"></div>
+    <!-- =========================================
+         FONDO
+    ========================================== -->
 
-    <div class="brillos">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-</div>
+    <div class="fondo" aria-hidden="true">
 
-    <div class="portada">
+        <div class="luna"></div>
 
-    <!-- BARCO AL FONDO -->
-    <img src="img/barco.png" class="barco-portada">
+        <div class="estrellas">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
 
-    <!-- PERSONAJES -->
-    <div class="escena-personajes">
-
-        <img src="img/zoro.png" class="personaje-portada zoro-portada">
-
-        <img src="img/chopper.png" class="personaje-portada chopper-portada">
-
-        <img src="img/laww.png" class="personaje-portada law-portada">
-
-        <img src="img/corazon.png" class="personaje-portada corazon-portada">
-
-    </div>
-
-
-    <!-- CONTENIDO PRINCIPAL -->
-    <div class="contenido-portada">
-
-        <h1>Hola mi amor</h1>
-
-        <p>
-            Hay algo que quiero mostrarte
-            que hice con mucho cariño para ti.
-        </p>
-
-
-        <div class="separador-portada">
-    <span></span>
-    <b>♡</b>
-    <span></span>
-</div>
-
-
-        <a href="cumpleanos.html" class="ancla">
-    <span class="icono-ancla">⚓</span>
-    <span>Toca aquí</span>
-</a>
+        <div class="brillos">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
 
     </div>
 
-</div>
+
+    <!-- =========================================
+         PORTADA
+    ========================================== -->
+
+    <main class="portada">
+
+
+        <!-- =====================================
+             BARCO
+        ====================================== -->
+
+        <img
+            src="img/barco.png"
+            class="barco-portada"
+            alt=""
+            aria-hidden="true"
+        >
+
+
+        <!-- =====================================
+             PERSONAJES DECORATIVOS
+        ====================================== -->
+
+        <div class="escena-personajes" aria-hidden="true">
+
+            <img
+                src="img/zoro.png"
+                class="personaje-portada zoro-portada"
+                alt=""
+            >
+
+            <img
+                src="img/chopper.png"
+                class="personaje-portada chopper-portada"
+                alt=""
+            >
+
+            <img
+                src="img/laww.png"
+                class="personaje-portada law-portada"
+                alt=""
+            >
+
+            <img
+                src="img/corazon.png"
+                class="personaje-portada corazon-portada"
+                alt=""
+            >
+
+        </div>
+
+
+        <!-- =====================================
+             CONTENIDO PRINCIPAL
+        ====================================== -->
+
+        <section class="contenido-portada">
+
+            <div class="etiqueta-portada">
+                ⚓ Una pequeña sorpresa
+            </div>
+
+
+            <h1>
+                Hola mi amor
+                <span class="corazon-titulo">♥</span>
+            </h1>
+
+
+            <p>
+                Hay algo que quiero mostrarte
+                que hice con mucho cariño para ti.
+            </p>
+
+
+            <!-- =================================
+                 SEPARADOR
+            ================================== -->
+
+            <div class="separador-portada" aria-hidden="true">
+                <span></span>
+                <b>♡</b>
+                <span></span>
+            </div>
+
+
+            <!-- =================================
+                 BOTÓN
+            ================================== -->
+
+            <a
+                href="cumpleanos.html"
+                class="ancla"
+                aria-label="Abrir la sorpresa"
+            >
+
+                <span class="icono-ancla">
+                    ⚓
+                </span>
+
+                <span class="texto-ancla">
+                    Toca aquí
+                </span>
+
+                <span class="subtexto-ancla">
+                    para continuar
+                </span>
+
+            </a>
+
+        </section>
+
+
+        <!-- =====================================
+             MAR
+        ====================================== -->
+
+        <div class="olas" aria-hidden="true">
+
+            <div class="ola ola1"></div>
+            <div class="ola ola2"></div>
+            <div class="ola ola3"></div>
+
+        </div>
+
+
+        <!-- =====================================
+             REFLEJOS
+        ====================================== -->
+
+        <div class="reflejos" aria-hidden="true">
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+
+        <!-- =====================================
+             CORAZONES FLOTANTES
+        ====================================== -->
+
+        <div class="corazones" aria-hidden="true">
+
+            <span class="heart heart1"></span>
+            <span class="heart heart2"></span>
+            <span class="heart heart3"></span>
+            <span class="heart heart4"></span>
+
+        </div>
+
+    </main>
 
 </body>
 
