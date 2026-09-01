@@ -21,6 +21,11 @@
 
     --texto: #fff4d2;
 
+    --pergamino-fondo: #fff9e6;
+    --pergamino-borde: #d4a751;
+    --pergamino-texto: #3d2b1f;
+    --pergamino-acento: #8c2d19;
+
     --sombra: rgba(0, 0, 0, 0.75);
 
     --contenedor: 900px;
@@ -81,7 +86,7 @@ body {
 
 
 /* =========================================================
-   PORTADA
+   PORTADA (INDEX)
    ========================================================= */
 
 .portada {
@@ -115,7 +120,7 @@ body {
 
 
 /* =========================================================
-   FONDO
+   FONDO COMPARTIDO
    ========================================================= */
 
 .fondo {
@@ -333,7 +338,7 @@ body {
 
 
 /* =========================================================
-   PERSONAJES
+   PERSONAJES PORTADA
    ========================================================= */
 
 .escena-personajes {
@@ -467,7 +472,7 @@ body {
 
 
 /* =========================================================
-   CONTENIDO
+   CONTENIDO PORTADA
    ========================================================= */
 
 .contenido-portada {
@@ -548,7 +553,7 @@ body {
 
 
 /* =========================================================
-   TÍTULO
+   TÍTULO PORTADA
    ========================================================= */
 
 .portada h1 {
@@ -679,7 +684,7 @@ body {
 
 
 /* =========================================================
-   TEXTO
+   TEXTO PORTADA
    ========================================================= */
 
 .portada p {
@@ -753,7 +758,7 @@ body {
 
 
 /* =========================================================
-   SEPARADOR
+   SEPARADOR PORTADA
    ========================================================= */
 
 .separador-portada {
@@ -1368,7 +1373,7 @@ body {
 .corazones {
 
     position:
-        absolute;
+        fixed;
 
     inset:
         0;
@@ -1682,7 +1687,459 @@ body {
 
 
 /* =========================================================
-   TABLET
+   ESTILOS EXCLUSIVOS: PAGINA CUMPLEAÑOS
+   ========================================================= */
+
+.pagina-cumpleanos {
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    min-height: 100vh;
+
+    padding:
+
+        max(40px, env(safe-area-inset-top))
+
+        max(18px, env(safe-area-inset-right))
+
+        max(80px, env(safe-area-inset-bottom))
+
+        max(18px, env(safe-area-inset-left));
+
+}
+
+.pagina-cumpleanos .olas {
+
+    position: fixed;
+
+    z-index: 2;
+
+}
+
+
+/* ---------------------------------------------------------
+   TÍTULO SUPERIOR DE CUMPLEAÑOS
+   --------------------------------------------------------- */
+
+.pagina-cumpleanos .titulo {
+
+    position: relative;
+
+    z-index: 20;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: clamp(10px, 2vw, 20px);
+
+    max-width: min(900px, 92%);
+
+    margin: 15px auto 35px;
+
+    text-align: center;
+
+    animation: entradaTitulo 1.2s ease-out both;
+
+}
+
+.pagina-cumpleanos .titulo h1 {
+
+    color: var(--dorado);
+
+    font-size: clamp(26px, 4.5vw, 44px);
+
+    font-weight: 900;
+
+    line-height: 1.2;
+
+    text-wrap: balance;
+
+    -webkit-text-stroke: clamp(1px, 0.15vw, 1.8px) #241505;
+
+    text-shadow:
+
+        3px 3px 0 #241505,
+
+        -2px -2px 0 #241505,
+
+        0 0 12px rgba(246,200,95,0.45);
+
+}
+
+.pagina-cumpleanos .titulo .adorno {
+
+    color: var(--dorado-claro);
+
+    font-size: clamp(20px, 3vw, 32px);
+
+    filter: drop-shadow(0 0 8px rgba(246,200,95,0.8));
+
+    animation: latido 2.5s ease-in-out infinite;
+
+}
+
+
+/* ---------------------------------------------------------
+   PERSONAJE CORAZÓN
+   --------------------------------------------------------- */
+
+.pagina-cumpleanos .personaje-corazon {
+
+    position: fixed;
+
+    bottom: clamp(10px, 3vh, 30px);
+
+    right: clamp(10px, 3vw, 40px);
+
+    width: clamp(70px, 12vw, 130px);
+
+    z-index: 25;
+
+    pointer-events: none;
+
+    filter: drop-shadow(0 8px 15px rgba(0,0,0,0.8));
+
+    animation: flotarPersonaje 4.5s ease-in-out infinite;
+
+}
+
+.pagina-cumpleanos .personaje-corazon img {
+
+    width: 100%;
+
+    height: auto;
+
+    display: block;
+
+}
+
+
+/* ---------------------------------------------------------
+   PERGAMINO / CARTA
+   --------------------------------------------------------- */
+
+.pagina-cumpleanos .carta {
+
+    position: relative;
+
+    z-index: 20;
+
+    width: min(100%, 680px);
+
+    background:
+
+        radial-gradient(
+            circle at top left,
+            rgba(255, 255, 255, 0.6),
+            transparent 60%
+        ),
+
+        linear-gradient(
+            135deg,
+            #fffdf5 0%,
+            var(--pergamino-fondo) 45%,
+            #faeac3 100%
+        );
+
+    color: var(--pergamino-texto);
+
+    padding: clamp(35px, 6vw, 65px) clamp(25px, 5vw, 55px);
+
+    border-radius: 20px;
+
+    border: 2px solid var(--pergamino-borde);
+
+    box-shadow:
+
+        0 15px 35px rgba(0, 0, 0, 0.65),
+
+        inset 0 0 35px rgba(184, 134, 45, 0.25),
+
+        inset 0 0 10px rgba(92, 53, 10, 0.15);
+
+    animation: aparecerTexto 1s 0.2s ease-out both;
+
+    overflow: hidden;
+
+}
+
+
+/* Manchas envejecidas del pergamino */
+
+.pagina-cumpleanos .mancha {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    opacity: 0.14;
+
+    background: #8b5a2b;
+
+    filter: blur(20px);
+
+}
+
+.pagina-cumpleanos .mancha1 {
+
+    top: -30px;
+
+    right: -30px;
+
+    width: 140px;
+
+    height: 140px;
+
+}
+
+.pagina-cumpleanos .mancha2 {
+
+    bottom: 20px;
+
+    left: -40px;
+
+    width: 180px;
+
+    height: 180px;
+
+}
+
+.pagina-cumpleanos .mancha3 {
+
+    top: 45%;
+
+    right: 15%;
+
+    width: 90px;
+
+    height: 90px;
+
+}
+
+
+/* ---------------------------------------------------------
+   BRÚJULA
+   --------------------------------------------------------- */
+
+.pagina-cumpleanos .brujula {
+
+    position: absolute;
+
+    top: 22px;
+
+    right: 22px;
+
+    width: clamp(48px, 8vw, 64px);
+
+    aspect-ratio: 1;
+
+    border-radius: 50%;
+
+    border: 1.5px dashed rgba(140, 97, 22, 0.55);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    color: rgba(140, 97, 22, 0.7);
+
+    pointer-events: none;
+
+}
+
+.pagina-cumpleanos .brujula span {
+
+    position: absolute;
+
+}
+
+.pagina-cumpleanos .brujula .norte { top: 2px; color: #a94442; }
+.pagina-cumpleanos .brujula .sur { bottom: 2px; }
+.pagina-cumpleanos .brujula .este { right: 4px; }
+.pagina-cumpleanos .brujula .oeste { left: 4px; }
+
+.pagina-cumpleanos .brujula .aguja {
+
+    width: 3px;
+
+    height: 60%;
+
+    background: linear-gradient(to bottom, #a94442 50%, #444 50%);
+
+    transform-origin: center;
+
+    animation: agujaBrujula 6s ease-in-out infinite;
+
+}
+
+@keyframes agujaBrujula {
+
+    0%, 100% { transform: rotate(15deg); }
+    35% { transform: rotate(-25deg); }
+    70% { transform: rotate(35deg); }
+
+}
+
+
+/* ---------------------------------------------------------
+   CONTENIDO DE LA CARTA
+   --------------------------------------------------------- */
+
+.pagina-cumpleanos .contenido {
+
+    position: relative;
+
+    z-index: 5;
+
+}
+
+.pagina-cumpleanos .carta h2 {
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    color: var(--pergamino-acento);
+
+    font-size: clamp(22px, 3.8vw, 32px);
+
+    font-weight: 800;
+
+    text-align: center;
+
+    margin-bottom: 26px;
+
+    line-height: 1.25;
+
+}
+
+.pagina-cumpleanos .corazon-decorativo {
+
+    display: inline-block;
+
+    color: #c93b3b;
+
+    font-size: 0.85em;
+
+    margin-left: 4px;
+
+    animation: latido 2s ease-in-out infinite;
+
+}
+
+.pagina-cumpleanos .carta p {
+
+    color: var(--pergamino-texto);
+
+    font-size: clamp(16px, 2.2vw, 18.5px);
+
+    line-height: 1.75;
+
+    text-align: justify;
+
+    text-justify: inter-word;
+
+    margin-bottom: 20px;
+
+    text-shadow: none;
+
+}
+
+.pagina-cumpleanos .carta .aventura {
+
+    text-align: center;
+
+    font-size: clamp(17px, 2.4vw, 20px);
+
+    margin: 32px 0 25px;
+
+    color: #4a2a16;
+
+}
+
+.pagina-cumpleanos .carta .aventura strong {
+
+    color: var(--pergamino-acento);
+
+    font-size: 1.08em;
+
+    letter-spacing: 0.5px;
+
+}
+
+
+/* Separador dentro del pergamino */
+
+.pagina-cumpleanos .separador {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin: 30px auto;
+
+    width: 75%;
+
+}
+
+.pagina-cumpleanos .separador span {
+
+    flex: 1;
+
+    height: 1px;
+
+    background: linear-gradient(to right, transparent, var(--pergamino-borde), transparent);
+
+}
+
+.pagina-cumpleanos .separador i {
+
+    font-style: normal;
+
+    color: var(--pergamino-borde);
+
+    font-size: 18px;
+
+}
+
+.pagina-cumpleanos .carta h2.final {
+
+    font-size: clamp(20px, 3.4vw, 28px);
+
+    margin-top: 15px;
+
+    margin-bottom: 5px;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* =========================================================
+   TABLET (PORTADA Y GENERAL)
    ========================================================= */
 
 @media (max-width: 900px) {
@@ -1794,7 +2251,7 @@ body {
 
 
     /* -------------------------
-       CONTENIDO
+       CONTENIDO PORTADA
     ------------------------- */
 
     .contenido-portada {
@@ -1836,7 +2293,7 @@ body {
 
 
     /* -------------------------
-       TÍTULO
+       TÍTULO PORTADA
     ------------------------- */
 
     .portada h1 {
@@ -1861,7 +2318,7 @@ body {
 
 
     /* -------------------------
-       TEXTO
+       TEXTO PORTADA
     ------------------------- */
 
     .portada p {
@@ -1886,7 +2343,7 @@ body {
 
 
     /* -------------------------
-       SEPARADOR
+       SEPARADOR PORTADA
     ------------------------- */
 
     .separador-portada {
@@ -1965,7 +2422,7 @@ body {
 
 
     /* -------------------------
-       PERSONAJES
+       PERSONAJES PORTADA
     ------------------------- */
 
     .zoro-portada {
@@ -2064,6 +2521,52 @@ body {
         transform:
             scale(0.8)
             rotate(-45deg);
+
+    }
+
+    /* -------------------------
+       AJUSTES CUMPLEAÑOS (MÓVIL)
+       ------------------------- */
+
+    .pagina-cumpleanos {
+
+        padding-top: 25px;
+
+        padding-bottom: 90px;
+
+    }
+
+    .pagina-cumpleanos .titulo {
+
+        margin-bottom: 22px;
+
+    }
+
+    .pagina-cumpleanos .carta {
+
+        padding: 30px 20px;
+
+        border-radius: 16px;
+
+    }
+
+    .pagina-cumpleanos .brujula {
+
+        top: 14px;
+
+        right: 14px;
+
+    }
+
+    .pagina-cumpleanos .personaje-corazon {
+
+        bottom: 15px;
+
+        right: 15px;
+
+        width: 75px;
+
+        opacity: 0.85;
 
     }
 
